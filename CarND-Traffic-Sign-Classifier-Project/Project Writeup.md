@@ -153,7 +153,7 @@ The only fully connected weights are between dropout and the final output layer.
 
 To train the model, I used Adam Optimizer because it seems to be faster than traditional gradient descent.  There are also other benefits mentioned online (Reference: https://machinelearningmastery.com/adam-optimization-algorithm-for-deep-learning/)
 
-The batch size is 128, which is a typical value.  For number of epochs, I set it to 2.  The reason for this small number is my code will save the trained model so I can read the weights and biases every time before training.  I can rerun the training in small epochs to avoid over training.
+The batch size is 128, which is a typical value.  For number of epochs, I set it to 6.  Every time 6 epochs are done, the trained weights are saved.  I regenerate the whole data augmentation and continue until the accuracies have reached peaks.
 
 For learning rate, I setup maximum rate (also default) as 0.002.  As training set accuracy is closer to 100%, learning rate will be adjusted automatically after each epoch.
 
